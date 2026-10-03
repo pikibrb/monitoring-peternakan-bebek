@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('monitoring_pertumbuhan', function (Blueprint $table) {
            $table->id();
-            $table->foreignId('kelompok_bebek_id')->constrained('kelompok_bebeks')->cascadeOnDelete();
+            $table->foreignId('kelompok_bebek_id')->constrained('kelompok_bebek')->cascadeOnDelete();
             $table->date('tanggal_catat');
             $table->integer('umur_hari');
             $table->decimal('berat_rata_rata', 8, 2);
