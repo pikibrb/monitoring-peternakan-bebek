@@ -1,17 +1,14 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <livewire:dashboard.kpi-cards />
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full">
+        <livewire:dashboard.production-chart />
+        <livewire:dashboard.sales-chart />
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full mb-space-lg">
+        <livewire:dashboard.quick-actions />
+        <livewire:dashboard.receivables />
+        <livewire:dashboard.activity-log />
+    </section>
 </x-app-layout>
